@@ -41,7 +41,7 @@ jobs:
         make config-docker-client
 
     - name: Push Docker Image to Container Registry (GCR)
-       env:
-         GIT_TAG: v0.1.0 
-         run:
-           make push-docker-image-to-gcr
+      env:
+       GIT_TAG: v0.1.0 
+      run:
+        make push-docker-image-to-gcr
