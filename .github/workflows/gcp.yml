@@ -2,6 +2,7 @@ name: Build and Push Python Image to Google Cloud Platform
 on:
   push:
     branches: [ main ]
+
 jobs:
   build-push-gcr:
     name: Build and Push to GCP
@@ -31,7 +32,7 @@ jobs:
       run: |
         make lint-dockerfile
 
-   - name: Build Docker Image
+    - name: Build Docker Image
       run: |
         make build-docker-image
 
