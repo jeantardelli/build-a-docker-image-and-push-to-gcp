@@ -7,6 +7,9 @@ All the steps that run in GitHub actions are in the `Makefile`. For clarity it i
 
 Note that in order to run this repo demo, it is necessary to create a IAM account in GCP with the correct permissions and with a auth key and load it as a secret actions in the repository you will be working on. More info on this on the [official Google Actions](https://github.com/google-github-actions/setup-gcloud) page.
 
+![image](https://user-images.githubusercontent.com/42701946/211154409-6b930735-1547-4026-b24d-a9251ff33b70.png)
+
+
 ## To build the container 
 
 ### Build image
