@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       IMAGE_NAME: push-docker-images-to-gcp
+      REPO_NAME: push-docker-images-to-gcp
       PROJECT_ID: push-docker-images-to-gcp
       PROJECT_LOC: europe-west-1
     steps: 
