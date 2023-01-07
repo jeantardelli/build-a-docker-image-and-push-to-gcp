@@ -83,8 +83,8 @@ docker push gcr.io/${PROJECT_ID}/${IMAGE_NAME}:${GIT_TAG}
 Artifact Registry is a single place for your organization to manage container images and language packages (such as Maven and npm).
 
 ```bash
-docker tag ${IMAGE_NAME}:latest ${PROJECT_LOC}.pkg.dev/${PROJECT_ID}/${IMAGE_NAME}:latest &&\
-docker tag ${IMAGE_NAME}:latest ${PROJECT_LOC}.pkg.dev/${PROJECT_ID}/${IMAGE_NAME}:${GIT_TAG} &&\
-docker push ${PROJECT_LOC}.pkg.dev/${PROJECT_ID}/${IMAGE_NAME}:latest &&\
-docker push ${PROJECT_LOC}.pkg.dev/${PROJECT_ID}/${IMAGE_NAME}:${GIT_TAG}
+docker tag ${IMAGE_NAME}:latest ${PROJECT_LOC}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${IMAGE_NAME}:latest &&\
+docker tag ${IMAGE_NAME}:latest ${PROJECT_LOC}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${IMAGE_NAME}:${GIT_TAG} &&\
+docker push ${PROJECT_LOC}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${IMAGE_NAME}:latest &&\
+docker push ${PROJECT_LOC}-docker.pkg.dev/${PROJECT_ID}/${REPO_NAME}/${IMAGE_NAME}:${GIT_TAG
 ```

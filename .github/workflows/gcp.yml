@@ -8,6 +8,7 @@ jobs:
     name: Build and Push to GCP
     runs-on: ubuntu-latest
     env:
+      VERSION_TYPE: patch
       IMAGE_NAME: push-docker-images-to-gcp
       REPO_NAME: push-docker-images-to-gcp
       PROJECT_ID: push-docker-images-to-gcp
@@ -38,18 +39,23 @@ jobs:
       run: |
         make build-docker-image
 
+    - name: Automatic Tagging of Releases
+      id: increment-git-tag
+      run: |
+        make automatic-tagging-of-releases
+
     - name: Configure Docker Client                                                                                                                           
       run: |
         make config-docker-client
 
     - name: Push Docker Image to Container Registry (GCR)
       env:
-       GIT_TAG: v0.1.0 
+       GIT_TAG: ${{ steps.increment-git-tag.outputs.git-tag }}
       run:
         make push-docker-image-to-gcr
 
     - name: Push Docker Image to Artifact Registry (GAR)
       env:
-       GIT_TAG: v0.1.0 
+       GIT_TAG: ${{ steps.increment-git-tag.outputs.git-tag }}
       run:
         make push-docker-image-to-gar
