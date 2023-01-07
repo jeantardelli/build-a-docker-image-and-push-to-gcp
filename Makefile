@@ -13,7 +13,7 @@ config-docker-client:
 	gcloud auth configure-docker ${PROJECT_LOC}-docker.pkg.dev
 
 automatic-tagging-of-releases:
-	bash ./scripts/git_tag_update.sh -v ${VERSION_TYPE}
+	bash scritps/git_tag_update.sh -v ${VERSION_TYPE}
 
 build-docker-image:
 	docker build -t ${IMAGE_NAME}:latest .
